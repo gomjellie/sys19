@@ -1,3 +1,4 @@
+#!/bin/sh
 #res="$(cat /etc/passwd | cut -d':' -f1)"
 
 #echo $res
