@@ -7,7 +7,7 @@ Q2. 현재 시스템의 정보를 출력하기
 '
 
 # xargs without arguments works like trim method
-num_of_cores=$(cat /proc/cpuinfo |grep 'cpu cores' |awk -F':' '{print $2}' |xargs)
+num_of_cores=$(cat /proc/cpuinfo |grep 'cpu cores' |awk -F':' '{ sum += $2 } END {print sum}' |xargs)
 mem_size=$(cat /proc/meminfo |grep 'MemTotal' |awk -F':' '{print $2}' |xargs)
 
 echo "Your Machine has $num_of_cores cores"
